@@ -17,11 +17,6 @@
 int	ft_printf(const char	*format, ...)
 {
 	va_list		list;
-	char		*s;
-	char 		c;
-	int			n;
-	void		*p;
-	unsigned int ui;
 	int			length;
 
 	va_start(list, format);
@@ -29,12 +24,15 @@ int	ft_printf(const char	*format, ...)
 	{
 		if (*format == '%') // на этом моменте в принципе можно перенаправить в другую функцию
 		{
-			len = print_this_specifier(list, *(++format));
+			length = print_this_specifier(list, *(++format));
 		}
 		else if (*format != '%')
+		{
 			ft_putchar_fd(*format, 1);
+			length += 1;
+		}
 		format++;
 	}
 	va_end(list);
-	return (1);
+	return (length);
 }

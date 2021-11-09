@@ -12,4 +12,5 @@ void	ft_putstr_fd_modified(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
+    return (i);
 }

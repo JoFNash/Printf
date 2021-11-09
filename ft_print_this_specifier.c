@@ -6,6 +6,7 @@ int print_this_specifier(va_list list, char sp)
 {
     int result_len;
 
+    result_len = 0;
     if (sp == 'c')
         result_len = ft_putchar_fd(va_arg(list, int), 1);
     else if (sp == 's')
