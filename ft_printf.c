@@ -13,6 +13,7 @@
 #include "ft_printf.h"
 
 // ft_printf("%s %d abcdefg \n %s", str1, 199, str2)
+// amatilda просит зависимость от мейкфайла!
 
 int	ft_printf(const char	*format, ...)
 {
