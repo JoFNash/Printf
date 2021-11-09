@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-// ("%s %d abcdefg \n %s", str1, 199, str2)
+// ft_printf("%s %d abcdefg \n %s", str1, 199, str2)
 
 int	ft_printf(const char	*format, ...)
 {
@@ -22,50 +22,14 @@ int	ft_printf(const char	*format, ...)
 	int			n;
 	void		*p;
 	unsigned int ui;
+	int			length;
 
 	va_start(list, format);
 	while (*(format) != '\0')
 	{
-		if (*format == '%')
+		if (*format == '%') // на этом моменте в принципе можно перенаправить в другую функцию
 		{
-			if (*(format + 1) == 'c')
-			{
-				c = va_arg(list, int);
-				ft_putchar_fd(c, 1);
-			}
-			else if (*(format + 1) == 's')
-			{
-				s = va_arg(list, char *);
-				ft_putstr_fd(s, 1);
-			}
-			else if (*(format + 1) == 'd' || *(format + 1) == 'i') // правильно?
-			{
-				n = va_arg(list, int);
-				ft_putnbr_fd(n, 1);
-			}
-			else if (*(format + 1) == 'p')
-			{
-				p = va_arg(list, void *);
-				ft_putstr_fd(p, 1);
-			}
-			else if (*(format + 1) == 'u')
-			{
-				ui = va_arg(list, unsigned int);
-				ft_putnbr_fd(ui, 1);
-			}
-			else if (*(format + 1) == 'x')
-			{
-				ui = print_in_hexadecimal_lowercase(va_arg(list, int), 1);
-			}
-			else if (*(format + 1) == 'X')
-			{
-				ui = print_in_hexadecimal_uppercase(va_arg(list, int), 1);
-			}
-			if (*(format + 1) == '%')
-			{
-				ft_putchar_fd('%', 1);
-			}
-			format++;
+			len = print_this_specifier(list, *(++format));
 		}
 		else if (*format != '%')
 			ft_putchar_fd(*format, 1);
