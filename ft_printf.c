@@ -24,12 +24,11 @@ int	ft_printf(const char	*format, ...)
 	{
 		if (*format == '%') // на этом моменте в принципе можно перенаправить в другую функцию
 		{
-			length = print_this_specifier(list, *(++format));
+			length = print_this_specifier(&list, *(++format));
 		}
 		else if (*format != '%')
 		{
-			ft_putchar_fd(*format, 1);
-			length += 1;
+			length += ft_putchar_fd_modified(*format, 1);
 		}
 		format++;
 	}

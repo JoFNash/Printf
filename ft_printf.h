@@ -16,11 +16,13 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 int     ft_printf(const char	*format, ...);
-int     print_this_specifier(va_list list, char sp);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd_modified(char *s, int fd);
+int     print_this_specifier(va_list *list, char sp);
+int     ft_putchar_fd_modified(char c, int fd);
+int     ft_putstr_fd_modified(char *s, int fd);
 int     ft_putnbr_fd_modified(int n, int fd);
+int     print_in_hexadecimal(int num, int fd, char c);
 
 #endif

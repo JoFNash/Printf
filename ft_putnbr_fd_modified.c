@@ -10,13 +10,13 @@ int	ft_putnbr_fd_modified(int n, int fd)
 	if (n_tmp < 0)
 	{
 		n_tmp = n_tmp * (-1);
-		ft_putchar_fd('-', fd);
+		ft_putchar_fd_modified('-', fd);
 	}
 	if (n_tmp > 9)
     {
-		ft_putnbr_fd(n_tmp / 10, fd);
+		ft_putnbr_fd_modified(n_tmp / 10, fd);
         len_n++;
     }
-	ft_putchar_fd(n_tmp % 10 + '0', fd);
+	ft_putchar_fd_modified(n_tmp % 10 + '0', fd);
     return (len_n);
 }
