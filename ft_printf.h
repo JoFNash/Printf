@@ -19,7 +19,7 @@
 # include <stdlib.h>
 
 int     ft_printf(const char	*format, ...);
-int     print_this_specifier(va_list *list, char sp);
+int     print_this_specifier(va_list *list, char sp, int fd);
 int     ft_putchar_fd_modified(char c, int fd);
 int     ft_putstr_fd_modified(char *s, int fd);
 int     ft_putnbr_fd_modified(int n, int fd);

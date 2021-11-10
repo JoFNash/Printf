@@ -20,7 +20,7 @@ int print_in_hexadecimal(int number, int fd, char c)
     char    *str_num;
     int     len_number;
     size_t  i;
-
+    
     i = 0;
     len_number = len_num(number, 16);
     str_num = (char *)malloc(sizeof(char) * (len_number + 1));
@@ -43,10 +43,10 @@ int print_in_hexadecimal(int number, int fd, char c)
         if (number % 16 < 10)
 		    str_num[len_number - 1 - i++] = (number % 16) + '0';
         else
-            str_num[len_number - 1 - i++] = (number % 16) - 10 + 'a';
+            str_num[len_number - 1 - i++] = (number % 16) - 10 + c;
 		number /= 16;
 	}
     str_num[len_number] = '\0';
-    ft_putstr_fd_modified(str_num, 1);
+    ft_putstr_fd_modified(str_num, fd);
     return (2);
 }

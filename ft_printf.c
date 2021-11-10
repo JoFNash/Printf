@@ -25,7 +25,7 @@ int	ft_printf(const char	*format, ...)
 	{
 		if (*format == '%') // на этом моменте в принципе можно перенаправить в другую функцию
 		{
-			length = print_this_specifier(&list, *(++format));
+			length = print_this_specifier(&list, *(++format), 1);
 		}
 		else if (*format != '%')
 		{

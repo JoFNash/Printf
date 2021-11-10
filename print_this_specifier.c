@@ -2,26 +2,26 @@
 
 // list, *(++format)
 
-int print_this_specifier(va_list *list, char sp)
+int print_this_specifier(va_list *list, char sp, int fd)
 {
     int result_len;
 
     result_len = 0;
     if (sp == 'c')
-        result_len = ft_putchar_fd_modified(va_arg(*list, int), 1);
+        result_len = ft_putchar_fd_modified(va_arg(*list, int), fd);
     else if (sp == 's')
-        result_len = ft_putstr_fd_modified(va_arg(*list, char *), 1);
+        result_len = ft_putstr_fd_modified(va_arg(*list, char *), fd);
     else if (sp == 'd' || sp == 'i')
-        result_len = ft_putnbr_fd_modified(va_arg(*list, int), 1);
+        result_len = ft_putnbr_fd_modified(va_arg(*list, int), fd);
     else if (sp == 'p')
-        result_len = ft_putstr_fd_modified(va_arg(*list, void *), 1);
+        result_len = ft_putstr_fd_modified(va_arg(*list, void *), fd);
     else if (sp == 'u')
-        result_len = ft_putnbr_fd_modified(va_arg(*list, unsigned int), 1);
+        result_len = ft_putnbr_fd_modified(va_arg(*list, unsigned int), fd);
     else if (sp == 'x')
-        result_len = print_in_hexadecimal(va_arg(*list, int), 1, 'a');
+        result_len = print_in_hexadecimal(va_arg(*list, int), fd, 'a');
     else if (sp == 'X')
-        result_len = print_in_hexadecimal(va_arg(*list, int), 1, 'A');
+        result_len = print_in_hexadecimal(va_arg(*list, int), fd, 'A');
     if (sp == '%')
-        result_len = ft_putchar_fd_modified('%', 1);
+        result_len = ft_putchar_fd_modified('%', fd);
     return (result_len);
 }
