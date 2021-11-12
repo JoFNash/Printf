@@ -24,5 +24,6 @@ int     ft_putchar_fd_modified(char c, int fd);
 int     ft_putstr_fd_modified(char *s, int fd);
 int     ft_putnbr_fd_modified(int n, int fd);
 int     print_in_hexadecimal(int num, int fd, char c);
+int     ft_putnbr_fd_modified_unsigned(int n, int fd);
 
 #endif

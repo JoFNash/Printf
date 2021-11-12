@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-// ft_printf("%s %d abcdefg \n %s", str1, 199, str2)
 // amatilda просит зависимость от мейкфайла!
 
 int	ft_printf(const char	*format, ...)
@@ -21,13 +20,14 @@ int	ft_printf(const char	*format, ...)
 	int			length;
 
 	va_start(list, format);
+	length = 0;
 	while (*(format) != '\0')
 	{
-		if (*format == '%') // на этом моменте в принципе можно перенаправить в другую функцию
+		if (*format == '%')
 		{
-			length = print_this_specifier(&list, *(++format), 1);
+			length += print_this_specifier(&list, *(++format), 1);
 		}
-		else if (*format != '%')
+		else
 		{
 			length += ft_putchar_fd_modified(*format, 1);
 		}
