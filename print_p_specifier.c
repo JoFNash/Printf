@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_p_specifier.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 16:53:40 by hsybassi          #+#    #+#             */
-/*   Updated: 2021/11/13 20:38:15 by hsybassi         ###   ########.fr       */
+/*   Created: 2021/11/13 15:39:14 by hsybassi          #+#    #+#             */
+/*   Updated: 2021/11/13 20:08:36 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// amatilda просит зависимость от мейкфайла!
-
-int	ft_printf(const char	*format, ...)
+int	print_p_specifier(void *p, int fd)
 {
-	va_list		list;
-	int			length;
+	int						len_number;
+	unsigned long long int	num;
 
-	va_start(list, format);
-	length = 0;
-	while (*(format) != '\0')
-	{
-		if (*format == '%')
-		{
-			length += print_this_specifier(&list, *(++format), 1);
-		}
-		else
-		{
-			length += ft_putchar_fd_modified(*format, 1);
-		}
-		format++;
-	}
-	va_end(list);
-	return (length);
+	len_number = 0;
+	num = (unsigned long long int) p;
+	write(fd, "0x", 2);
+	len_number += 2;
+	len_number += print_in_hexadecimal_long(num, fd, 'c');
+	return (len_number);
 }

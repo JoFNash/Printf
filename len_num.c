@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   len_num.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 16:53:40 by hsybassi          #+#    #+#             */
-/*   Updated: 2021/11/13 20:38:15 by hsybassi         ###   ########.fr       */
+/*   Created: 2021/11/13 20:14:21 by hsybassi          #+#    #+#             */
+/*   Updated: 2021/11/13 20:15:39 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// amatilda просит зависимость от мейкфайла!
-
-int	ft_printf(const char	*format, ...)
+int	len_num(long int num, int base)
 {
-	va_list		list;
-	int			length;
+	int		len;
 
-	va_start(list, format);
-	length = 0;
-	while (*(format) != '\0')
+	len = 0;
+	if (num < 0)
+		len++;
+	while (num)
 	{
-		if (*format == '%')
-		{
-			length += print_this_specifier(&list, *(++format), 1);
-		}
-		else
-		{
-			length += ft_putchar_fd_modified(*format, 1);
-		}
-		format++;
+		num = num / base;
+		len++;
 	}
-	va_end(list);
-	return (length);
+	return (len);
 }

@@ -8,6 +8,10 @@ SRCS 		= ft_printf.c\
     ft_putstr_fd_modified.c\
     print_in_hexadecimal.c\
     print_this_specifier.c\
+	print_p_specifier.c\
+	ft_strlen.c\
+	print_in_hexadecimal_long.c\
+	len_num.c\
 
 OBJS 		= $(SRCS:.c=.o)
 
