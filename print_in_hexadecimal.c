@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:22:26 by hsybassi          #+#    #+#             */
-/*   Updated: 2021/11/13 21:05:26 by hsybassi         ###   ########.fr       */
+/*   Updated: 2021/11/13 21:29:49 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int	print_in_hexadecimal(unsigned int number, int fd, char c)
 	}
 	str_num[len_number] = '\0';
 	ft_putstr_fd_modified(str_num, fd);
+	free(str_num);
 	return (len_number);
 }
