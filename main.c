@@ -4,47 +4,85 @@
 
 int	main(void)
 {
-	// printf("p:\n");
-	// printf("1 %x\n", -1);
-	// printf("2 %x \n", 1);
-	// printf("3 %x \n", 15);
-	// printf("4 %x \n", 16);
-	// printf("5 %x \n", 17);
-	// printf("6 %x %x \n", LONG_MIN, LONG_MAX);
-	// printf("7 %x %x \n", INT_MIN, INT_MAX);
-	// printf("8 %x %x \n", ULONG_MAX, -ULONG_MAX);
-	// printf("9 %x %x \n", 0, 0);
+	int	k;
 
-	ft_printf("p:\n");
-	ft_printf("1 %x\n", -1);
-	ft_printf("2 %x \n", 1);
-	ft_printf("3 %x \n", 15);
-	ft_printf("4 %x \n", 16);
-	ft_printf("5 %x \n", 17);
-	ft_printf("6 %x %x \n", LONG_MIN, LONG_MAX);
-	ft_printf("7 %x %x \n", INT_MIN, INT_MAX);
-	ft_printf("8 %x %x \n", ULONG_MAX, -ULONG_MAX);
-	ft_printf("9 %x %x \n", 0, 0);
-	// printf("\nx:\n");
-	// printf("1 %x\n", -1);
-	// printf("2 %x \n", 1);
-	// printf("3 %x \n", 15);
-	// printf("4 %x \n", 16);
-	// printf("5 %x \n", 17);
-	// printf("6 %x %x \n", LONG_MIN, LONG_MAX);
-	// printf("7 %x %x \n", INT_MIN, INT_MAX);
-	// printf("8 %x %x \n", ULONG_MAX, -ULONG_MAX);
-	// printf("9 %x %x \n", 0, 0);
+	// k = printf(" %p ", -1);
+	//printf("k = %d\n", k);
+	// k = printf(" %p ", 1);
+	//printf("k = %d\n", k);
+	// k = printf(" %p ", 15);
+	//printf("k = %d\n", k);
+	// k = printf(" %p ", 16);
+	//printf("k = %d\n", k);
+	// k = printf(" %p ", 17);
+	//printf("k = %d\n", k);
+	k = printf("%p\n", LONG_MIN);
+	//printf("k = %d\n", k);
+	// k = printf(" %p %p ", INT_MIN, INT_MAX);
+	//printf("k = %d\n", k);
+	// k = printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
+	//printf("k = %d\n", k);
+	// k = printf(" %p %p \n\n", 0, 0);
+	//printf("k = %d\n\n\n", k);
 
-	// ft_printf(" %x ", -1);
-	// ft_printf(" %x ", 1);
-	// ft_printf(" %x ", 15);
-	// ft_printf(" %x ", 16);
-	// ft_printf(" %x ", 17);
-	// ft_printf(" %x %x ", LONG_MIN, LONG_MAX);
-	// ft_printf(" %x %x ", INT_MIN, INT_MAX);
-	// ft_printf(" %x %x ", ULONG_MAX, -ULONG_MAX);
-	// ft_printf(" %x %x ", 0, 0);
-
+	// k = ft_printf(" %p ", -1);
+	//printf("k = %d\n", k);
+	// k = ft_printf(" %p ", 1);
+	//printf("k = %d\n", k);
+	// k = ft_printf(" %p ", 15);
+	//printf("k = %d\n", k);
+	// k = ft_printf(" %p ", 16);
+	//printf("k = %d\n", k);
+	// k = ft_printf(" %p ", 17);
+	//printf("k = %d\n", k);
+	k = ft_printf("%p\n", LONG_MIN);
+	//printf("k = %d\n", k);
+	// k = ft_printf(" %p %p ", INT_MIN, INT_MAX);
+	//printf("k = %d\n", k);
+	// k = ft_printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
+	//printf("k = %d\n", k);
+	// k = ft_printf(" %p %p ", 0, 0);
+	//printf("k = %d\n", k);
 	return (0);
 }
+
+
+/*
+	k = printf(" %p ", -1);
+	printf("k = %d\n", k);
+	// k = printf(" %p ", 1);
+	// printf("k = %d\n", k);
+	// k = printf(" %p ", 15);
+	// printf("k = %d\n", k);
+	// k = printf(" %p ", 16);
+	// printf("k = %d\n", k);
+	// k = printf(" %p ", 17);
+	// printf("k = %d\n", k);
+	// k = printf(" %p %p ", LONG_MIN, LONG_MAX);
+	// printf("k = %d\n", k);
+	// k = printf(" %p %p ", INT_MIN, INT_MAX);
+	// printf("k = %d\n", k);
+	// k = printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
+	// printf("k = %d\n", k);
+	// k = printf(" %p %p ", 0, 0);
+	// printf("k = %d\n", k);
+
+	k = ft_printf(" %p ", -1);
+	printf("k = %d\n", k);
+	// k = ft_printf(" %p ", 1);
+	// printf("k = %d\n", k);
+	// k = ft_printf(" %p ", 15);
+	// printf("k = %d\n", k);
+	// k = ft_printf(" %p ", 16);
+	// printf("k = %d\n", k);
+	// k = ft_printf(" %p ", 17);
+	// printf("k = %d\n", k);
+	// k = ft_printf(" %p %p ", LONG_MIN, LONG_MAX);
+	// printf("k = %d\n", k);
+	// k = ft_printf(" %p %p ", INT_MIN, INT_MAX);
+	// printf("k = %d\n", k);
+	// k = ft_printf(" %p %p ", ULONG_MAX, -ULONG_MAX);
+	// printf("k = %d\n", k);
+	// k = ft_printf(" %p %p ", 0, 0);
+	// printf("k = %d\n", k);
+*/
