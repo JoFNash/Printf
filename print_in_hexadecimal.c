@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 20:22:26 by hsybassi          #+#    #+#             */
-/*   Updated: 2021/11/17 17:31:16 by hsybassi         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:18:53 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,24 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
+char	*get_str_num(unsigned long int number, \
+				char *str_num, int len_number, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (number != 0)
+	{
+		if (number % 16 < 10)
+			str_num[len_number - 1 - i++] = (number % 16) + '0';
+		else
+			str_num[len_number - 1 - i++] = (number % 16) - 10 + c;
+		number /= 16;
+	}
+	str_num[len_number] = '\0';
+	return (str_num);
+}
+
 int	print_in_hexadecimal(unsigned int number, int fd, char c)
 {
 	unsigned long int	ui_num;
@@ -42,7 +60,7 @@ int	print_in_hexadecimal(unsigned int number, int fd, char c)
 	len_number = len_num(ui_num, 16);
 	str_num = (char *)malloc(sizeof(char) * (len_number + 1));
 	if (!str_num)
-		return (-1); // обработать!
+		return (-1);
 	if (ui_num == 0)
 	{
 		ft_memcpy(str_num, "0", 1);
@@ -50,15 +68,7 @@ int	print_in_hexadecimal(unsigned int number, int fd, char c)
 		free(str_num);
 		return (1);
 	}
-	while (ui_num != 0)
-	{
-		if (ui_num % 16 < 10)
-			str_num[len_number - 1 - i++] = (ui_num % 16) + '0';
-		else
-			str_num[len_number - 1 - i++] = (ui_num % 16) - 10 + c;
-		ui_num /= 16;
-	}
-	str_num[len_number] = '\0';
+	str_num = get_str_num(ui_num, str_num, len_number, c);
 	ft_putstr_fd_modified(str_num, fd);
 	free(str_num);
 	return (len_number);

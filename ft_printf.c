@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 16:53:40 by hsybassi          #+#    #+#             */
-/*   Updated: 2021/11/13 21:29:15 by hsybassi         ###   ########.fr       */
+/*   Updated: 2021/11/18 16:13:35 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_printf(const char	*format, ...)
 {
 	va_list		list;
 	int			length;
+	int			tmp;
 
 	va_start(list, format);
 	length = 0;
@@ -25,7 +26,11 @@ int	ft_printf(const char	*format, ...)
 	{
 		if (*format == '%')
 		{
-			length += print_this_specifier(&list, *(++format), 1);
+			tmp = print_this_specifier(&list, *(++format), 1);
+			if (tmp < 0)
+				return (-1);
+			else
+				length += tmp;
 		}
 		else
 		{
@@ -34,6 +39,5 @@ int	ft_printf(const char	*format, ...)
 		format++;
 	}
 	va_end(list);
-	//printf("length = %d\n", length);
 	return (length);
 }

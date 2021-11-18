@@ -6,7 +6,7 @@
 /*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/13 15:32:47 by hsybassi          #+#    #+#             */
-/*   Updated: 2021/11/17 20:45:10 by hsybassi         ###   ########.fr       */
+/*   Updated: 2021/11/18 15:25:13 by hsybassi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		print_in_hexadecimal(unsigned int num, int fd, char c);
 int		ft_putnbr_fd_modified_unsigned(int n, int fd);
 int		print_p_specifier(void *p, int fd);
 size_t	ft_strlen(const char *s);
-int 	print_in_hexadecimal_long(void * number, \
+int		print_in_hexadecimal_long(unsigned long long number, \
 											int fd, char c);
 int		len_num(long int num, int base);
 

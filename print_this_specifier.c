@@ -1,10 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_this_specifier.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hsybassi <hsybassi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/18 15:44:54 by hsybassi          #+#    #+#             */
+/*   Updated: 2021/11/18 15:45:00 by hsybassi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-// list, *(++format)
-
-int print_this_specifier(va_list *list, char sp, int fd)
+int	print_this_specifier(va_list *list, char sp, int fd)
 {
-	int result_len;
+	int	result_len;
 
 	result_len = 0;
 	if (sp == 'c')
@@ -16,7 +26,8 @@ int print_this_specifier(va_list *list, char sp, int fd)
 	else if (sp == 'p')
 		result_len = print_p_specifier(va_arg(*list, void *), fd);
 	else if (sp == 'u')
-		result_len = ft_putnbr_fd_modified_unsigned(va_arg(*list, unsigned int), fd);
+		result_len = ft_putnbr_fd_modified_unsigned(va_arg(*list, \
+										unsigned int), fd);
 	else if (sp == 'x')
 		result_len = print_in_hexadecimal(va_arg(*list, unsigned int), fd, 'a');
 	else if (sp == 'X')
